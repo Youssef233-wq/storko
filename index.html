@@ -1,0 +1,31 @@
+<!DOCTYPE html> <html lang="en"> <head> <title>Storko</title> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <style> body { font-family: "Lato", sans-serif; background: linear-gradient(to right, #8A2BE2, #00BFFF);
+}
+.mySlides {
+display: none;
+}
+#logo {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 72px;
+font-weight: bold;
+color: white;
+text-shadow: 2px 2px 4px #000000;
+}
+#design-button {
+background-color: white;
+color: #4CAF50;
+border: none;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin-top: 20px;
+box-shadow: 2px 2px 4px #000000;
+border-radius: 5px;
+}
+</style>
+
+</head> <body> <!-- Navbar --> <div class="w3-top"> <div class="w3-bar w3-black w3-card"> <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a> <a href="https://storko.johnholk.repl.co/up" class="w3-bar-item w3-button w3-padding-large">SEND</a> <div class="w3-dropdown-content w3-bar-block w3-card-4"> <a href="#" class="w3-bar-item w3-button">Merchandise</a> <a href="#" class="w3-bar-item w3-button">Extras</a> <a href="#" class="w3-bar-item w3-button">Media</a> </div> </div> <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a> </div> <!-- Slideshow --> <div class="w3-content" style="max-width:800px"> <div id="logo">STORKO</div> </div> <!-- Design button --> <center><button id="design-button" style="margin-top:100px;">Start!</button></center> <script> document.getElementById("fetch-button").addEventListener("click", function() { var xhr = new XMLHttpRequest(); xhr.open("POST", "/api"); xhr.onload = function() { if (xhr.status === 200) { document.getElementById("result").innerHTML = xhr.responseText; } }; xhr.send(); }); </script> </body> </html> <!DOCTYPE html> <html> <head> <title>Fetch Example</title> </head> <body> <div id="result"></div> <script> const button = document.getElementById('design-button'); button.addEventListener('click', function() { window.location.href = 'https://www.canva.com/create/t-shirts/'; const icon = document.createElement('div'); icon.innerHTML = '&#8592;'; icon.style.position = 'fixed'; icon.style.bottom = '20px'; icon.style.right = '20px'; icon.style.fontSize = '30px'; icon.style.cursor = 'pointer'; icon.addEventListener('click', function() { window.history.back(); }); document.body.appendChild(icon); }); </script> </body> </html>
